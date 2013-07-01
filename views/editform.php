@@ -34,7 +34,7 @@ if (($current_auth == $user_id) || ($current_user->caps['administrator'] == '1')
                                 <tr style="border-top:1px solid #eeeeee;">
                                     <th width="25%"><h4>Duration: </h4></th><td>
 
-                                    <input type="text" name="time" size="30" tabindex="5" value="<?php echo get_post_meta($_GET['id'], "videoswiper-embed-time", TRUE); ?>" id="time"/><br /><b><font color="grey"><small>Enter the time in seconds.</small></font></b></td></tr>
+                                    <input type="text" name="time" size="30" tabindex="5" value="<?php echo get_post_meta($_GET['id'], "video-time", TRUE); ?>" id="time"/><br /><b><font color="grey"><small>Enter the time in seconds.</small></font></b></td></tr>
 
                                 <tr style="border-top:1px solid #eeeeee;">
 
@@ -42,7 +42,7 @@ if (($current_auth == $user_id) || ($current_user->caps['administrator'] == '1')
                                     <th width="25%">
 
                                         <?php
-                                        $url_thumb = get_post_meta($_GET['id'], "videoswiper-embed-thumb", TRUE);
+                                        $url_thumb = get_post_meta($_GET['id'], "video-thumb", TRUE);
                                         // echo $_GET['id'].$url_thumb;
                                         if (!(empty($url_thumb))) {
                                             ?>
@@ -54,7 +54,7 @@ if (($current_auth == $user_id) || ($current_user->caps['administrator'] == '1')
 
                                         <input class="upload" hidden disabled="disabled" type="file" name="thumb"  tabindex="4"  id="thumb" />
 
-                                        <input type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "videoswiper-embed-thumb", TRUE); ?>" id="thumb"  style="width: 98%; "/><br /><b><font color="grey"><small>To keep the current Thumbnail leave this field empty.</small></font></b>
+                                        <input type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "video-thumb", TRUE); ?>" id="thumb"  style="width: 98%; "/><br /><b><font color="grey"><small>To keep the current Thumbnail leave this field empty.</small></font></b>
 
                                         <br /><br /><b>Current thumbnail :</b><br />
                                         <img src="<?php echo $url_thumb ?>"  height="180" width="320"></img></td>
@@ -71,7 +71,7 @@ if (($current_auth == $user_id) || ($current_user->caps['administrator'] == '1')
 
                                         <input class="upload" type="file" name="thumb"  tabindex="4"  id="thumb" />
 
-                                        <input disabled="disabled" type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "videoswiper-embed-thumb", TRUE); ?>" id="thumb"  style="display:none;"/><br /><b><font color="grey"><small>To keep the current Thumbnail leave this field empty.</small></font></b>
+                                        <input disabled="disabled" type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "video-thumb", TRUE); ?>" id="thumb"  style="display:none;"/><br /><b><font color="grey"><small>To keep the current Thumbnail leave this field empty.</small></font></b>
 
                                         <br /><br /><b>Current thumbnail :</b><br />
                                         <?php
@@ -91,7 +91,7 @@ if (($current_auth == $user_id) || ($current_user->caps['administrator'] == '1')
 
                                 <tr style="border-top:1px solid #eeeeee;">
                                     <th width="25%"><h4> Embed Code: </h4></th><td>
-                                    <textarea id="embed" tabindex="7" name="embed" cols="40" rows="4" style="width: 98%;"><?php echo get_post_meta($_GET['id'], "videoswiper-embed-code", TRUE); ?></textarea><br /><b><font color="grey"><font color="grey"><small>Remember to adjust the embed player size to match your theme!</small></font></b> </td></tr></tbody></table>
+                                    <textarea id="embed" tabindex="7" name="embed" cols="40" rows="4" style="width: 98%;"><?php echo get_post_meta($_GET['id'], "video-code", TRUE); ?></textarea><br /><b><font color="grey"><font color="grey"><small>Remember to adjust the embed player size to match your theme!</small></font></b> </td></tr></tbody></table>
 
 
                         </div>

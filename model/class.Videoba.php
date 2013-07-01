@@ -58,9 +58,9 @@ class Videoba {
                     $this->id = wp_insert_post($this->my_post);
 
                     if ($this->id) {
-                        add_post_meta($this->id, 'videoswiper-embed-code', $_POST['embed']);
-                        // add_post_meta($id, 'videoswiper-embed-thumb', $_POST['thumb']);
-                        add_post_meta($this->id, 'videoswiper-embed-time', $_POST['time']);
+                        add_post_meta($this->id, 'video-code', $_POST['embed']);
+                        // add_post_meta($id, 'video-thumb', $_POST['thumb']);
+                        add_post_meta($this->id, 'video-time', $_POST['time']);
 
                         if (isset($_FILES['thumb'])) {
                             $this->filename = $_FILES['thumb']['name'];
@@ -90,7 +90,7 @@ class Videoba {
                             set_post_thumbnail($this->id, $this->attach_id);
                         }
                         if ($_POST['thumb']) {
-                            add_post_meta($this->id, 'videoswiper-embed-thumb', $_POST['thumb']);
+                            add_post_meta($this->id, 'video-thumb', $_POST['thumb']);
                         }
                     }
                     if (get_option('mail') == 'yes') {
@@ -105,14 +105,14 @@ class Videoba {
                     //echo "in else";
                     $this->id = wp_update_post($this->my_post);
                     if ($this->id) {
-                        update_post_meta($this->id, 'videoswiper-embed-code', $_POST['embed']);
-                        //update_post_meta($id, 'videoswiper-embed-thumb', $_POST['thumb']);
-                        update_post_meta($this->id, 'videoswiper-embed-time', $_POST['time']);
+                        update_post_meta($this->id, 'video-code', $_POST['embed']);
+                        //update_post_meta($id, 'video-thumb', $_POST['thumb']);
+                        update_post_meta($this->id, 'video-time', $_POST['time']);
 
                         if ($_POST['thumb']) {
                             //echo "url";
                             $this->pages = & get_children('numberposts=1&post_mime_type=image/jpeg&post_parent=' . $_GET['id']);
-                            update_post_meta($this->id, 'videoswiper-embed-thumb', $_POST['thumb']);
+                            update_post_meta($this->id, 'video-thumb', $_POST['thumb']);
                             foreach ($this->pages as $attachment_id => $attachment) {
 
                                 $this->link = $attachment->ID;
@@ -153,11 +153,11 @@ class Videoba {
 
                             //insert code to check if embed-thumb for post is non empty, then delete that post meta
 
-                            $this->url_val = get_post_meta($_GET['id'], "videoswiper-embed-thumb", TRUE);
+                            $this->url_val = get_post_meta($_GET['id'], "video-thumb", TRUE);
                             //echo "uel= " . $url_val;
                             if (!(empty($this->url_val))) {
                                 //echo "url is not empty";
-                                delete_post_meta($_GET['id'], "videoswiper-embed-thumb", $this->url_val);
+                                delete_post_meta($_GET['id'], "video-thumb", $this->url_val);
                             }
                         }
                     }
@@ -198,7 +198,7 @@ class Videoba {
 
     public function show_main() {
         global $customFields;
-        $customFields = "'videoswiper-embed-code'";
+        $customFields = "'video-code'";
         global $current_user;
         //print_r($current_user);
         // print_r($current_user->caps);
@@ -248,7 +248,7 @@ class Videoba {
                 $this->arr['thumb'] =  '<a href="'.get_permalink().'"><img src="'.$image[0].'" width="120px" height="'.$image[2].'" /></a>'; 
             }
             else{
-                $image[0] = get_post_meta(get_the_ID(), 'videoswiper-embed-thumb', TRUE);    //URL of Thumbnail from URL
+                $image[0] = get_post_meta(get_the_ID(), 'video-thumb', TRUE);    //URL of Thumbnail from URL
             $this->arr['thumb'] =  '<a href="'.get_permalink().'"><img src="'.$image[0].'" width="120px" height="68px" /></a>';  
             }
             
@@ -259,10 +259,10 @@ class Videoba {
             //$this->arr['guid'] = get_permalink();
             $this->arr['status'] = get_post_status(get_the_ID());
             $this->arr['author'] = get_the_author();
-            if ((get_post_meta(get_the_ID(), 'videoswiper-embed-time', true)) >= 3600) {
-                        $vidTime= gmdate("H:i:s", get_post_meta(get_the_ID(), 'videoswiper-embed-time', true));
+            if ((get_post_meta(get_the_ID(), 'video-time', true)) >= 3600) {
+                        $vidTime= gmdate("H:i:s", get_post_meta(get_the_ID(), 'video-time', true));
                     } else {
-                        $vidTime= gmdate("i:s", get_post_meta(get_the_ID(), 'videoswiper-embed-time', true));
+                        $vidTime= gmdate("i:s", get_post_meta(get_the_ID(), 'video-time', true));
                     }
             $this->arr['duration'] = $vidTime;
             $this->a[$this->i] = $this->arr;

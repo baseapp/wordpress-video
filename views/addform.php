@@ -34,7 +34,7 @@
 
                                 <input class="upload" type="file" name="thumb"  tabindex="4"  id="thumb" />
 
-                                <input hidden disabled="disabled" type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "videoswiper-embed-thumb", TRUE); ?>" id="thumb"  style="width: 98%; display:none;"/><br /><b><font color="grey"><small>Upload thumbnail or enter a URL.</small></font></b>
+                                <input hidden disabled="disabled" type="text" class="url" name="thumb" size="30" tabindex="6" value="<?php echo get_post_meta($_GET['id'], "video-thumb", TRUE); ?>" id="thumb"  style="width: 98%; display:none;"/><br /><b><font color="grey"><small>Upload thumbnail or enter a URL.</small></font></b>
                             </td></tr>
                             <tr style="border-top:1px solid #eeeeee;">
                                 <th width="25%"><h4>Embed Code: <br /></h4></th><td><textarea id="embed" tabindex="5" name="embed" cols="40" rows="4" style="width: 98%;"/><?php echo stripslashes(htmlspecialchars($_POST['embed'])); ?></textarea><br /><b><font color="grey"><small>Remember to adjust the embed player size to match your theme!</small></font></b></td>
