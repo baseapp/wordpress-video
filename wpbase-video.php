@@ -1,18 +1,18 @@
 <?php
 /*
-  Plugin Name: Video Plugin
-  Plugin URI: localhost/wordpress
+  Plugin Name: wpbase-video
+  Plugin URI: http://www.baseapp.com
   Description: video hosting plugin with MVC
   Author: baseapp systems
-  Version: 3.0
-  Author URI: http://baseapp.com/
+  Version: 1.0
+  Author URI: http://www.baseapp.com/
  */
  
- require 'plugin-updates/plugin-update-checker.php';
+/* require 'plugin-updates/plugin-update-checker.php';
 $MyUpdateChecker = new PluginUpdateChecker(
     'http://192.168.0.1/vikrant/wptest/ba-vid-plugin/info.json',
     __FILE__
-);
+);*/
  
  
 include_once (dirname(__FILE__) . '/controller/controller.php');
