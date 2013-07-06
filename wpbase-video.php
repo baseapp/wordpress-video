@@ -3,7 +3,7 @@
   Plugin Name: wpbase-video
   Plugin URI: http://www.baseapp.com
   Description: video hosting plugin with MVC
-  Author: baseapp systems
+  Author: Vikrant Datta
   Version: 1.0
   Author URI: http://www.baseapp.com/
  */
