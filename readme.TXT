@@ -7,8 +7,18 @@ Author: baseapp systems
 Version: 1.0
 Author URI: http://www.baseapp.com/
 
-
+== Description ==
 
 == Installation ==
 To install the plugin copy the folder to wordpress/wp-content/plugins/ folder.
 Then open site-url/wp-admin, go to plugins and press activate.
+
+== Upgrade Notice ==
+
+== Screenshots ==
+
+== Changelog ==
+
+== Frequently Asked Questions ==
+
+== Donations ==
